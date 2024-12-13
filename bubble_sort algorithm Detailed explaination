@@ -1,0 +1,83 @@
+>>> Bubble_Sort Algorithm Explaination
+
+a) This algorithm is implemented by firstly defining a function tittled the name of the algorithm for clarity.
+
+            def bubble_sort(arr):
+
+b) After defining the function, we need to acquire the lenghth/size of the array to be sorted. and store it in a variable.
+
+            def bubble_sort(arr):
+            n = len(arr)
+
+c) Now the algorithm has to traverse through the array and sort it. and this is done using a nested loop.
+  > the range is (n - 1) because the number of passes needed to sort the array are 1 value less than the number of values in the 
+    array. this is because automatically on the first pass the highest unsorted value is correctly positioned as the last, thus 
+    leaving the array with only six passes to sort the array
+
+          def bubble_sort(arr):
+          n = len(arr)
+            for i in range (n - 1):
+              for j in range (n - i - 1):
+                if arr[j] > arr[j + 1]:
+                  arr[j], arr[j+1] = arr[j + 1], arr[j]
+          return arr
+
+  > In this for loop, in the inner loop where there`s 
+        if arr[j] > arr[j + 1]:
+           arr[j], arr[j+1] = arr[j + 1], arr[j]
+
+      - arr[j] represents current index/element in the array
+      - arr[j+1] representes the next index/element in the array
+      - If arr[j] > arr[j+1] ( the first element is larger than the second), the two elements need to swap positionsm where 
+        the smaller values comes first and highest comes last (Ascending Order). 
+      - If arr[j] <= arr[j+1] then the elements are already in order, so no swapping is performed.  
+   > The line of code   arr[j], arr[j+1] = arr[j + 1], arr[j] is the one actually doing the swapping. by doing so..
+      - Tuple packing = which is a variable where you can store multiple values. & evaluate the right hand side first.
+      - ( arr[j + 1], arr[j] ) = This creates a tuple containing the two elements in reverse order. For example, if arr[j] = 5
+        and arr[j+1] = 3, this evaluates (3,5). 
+      - Tuple unpacking = Python then unpacks this tuple into the variables on the left-hand side
+        arr[j] = 3
+        arr[j+1] = 5
+      - This one line swap is the same as the following code written in a more traditional style.
+          temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp
+
+>>> EXAMPLE 
+numbers = [64, 34, 25, 22, 11, 90]
+print("Unsorted Array:",numbers)
+sorted_numbers = bubble_sort(numbers)
+print ("Sorted Array:", numbers)
+
+Outcome
+*NB* this outcome consists of all the passes made by the algorithm
+
+Unsorted Array: [64, 34, 25, 22, 11, 90]
+pass1:
+After comparing index 0 and 1:[34, 64, 25, 22, 11, 90]
+After comparing index 1 and 2:[34, 25, 64, 22, 11, 90]
+After comparing index 2 and 3:[34, 25, 22, 64, 11, 90]
+After comparing index 3 and 4:[34, 25, 22, 11, 64, 90]
+After comparing index 4 and 5:[34, 25, 22, 11, 64, 90]
+End of Pass 1: [34, 25, 22, 11, 64, 90]
+pass2:
+After comparing index 0 and 1:[25, 34, 22, 11, 64, 90]
+After comparing index 1 and 2:[25, 22, 34, 11, 64, 90]
+After comparing index 2 and 3:[25, 22, 11, 34, 64, 90]
+After comparing index 3 and 4:[25, 22, 11, 34, 64, 90]
+End of Pass 2: [25, 22, 11, 34, 64, 90]
+pass3:
+After comparing index 0 and 1:[22, 25, 11, 34, 64, 90]
+After comparing index 1 and 2:[22, 11, 25, 34, 64, 90]
+After comparing index 2 and 3:[22, 11, 25, 34, 64, 90]
+End of Pass 3: [22, 11, 25, 34, 64, 90]
+pass4:
+After comparing index 0 and 1:[11, 22, 25, 34, 64, 90]
+After comparing index 1 and 2:[11, 22, 25, 34, 64, 90]
+End of Pass 4: [11, 22, 25, 34, 64, 90]
+pass5:
+After comparing index 0 and 1:[11, 22, 25, 34, 64, 90]
+End of Pass 5: [11, 22, 25, 34, 64, 90]
+Sorted array: [11, 22, 25, 34, 64, 90]
+          
+    
