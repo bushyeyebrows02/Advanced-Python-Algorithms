@@ -16,9 +16,13 @@ def bubble_sort(arr):
         #inner loop.
         #the Inner loop compares the adjacent elements & swappes them
         for j in range(n-i-1):
-            #swapping
+            #swapping using tuples
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
+            #OR use the traditional way using a temporal variable.
+                            # temp = arr[j]
+                            # arr[j] = arr[j+1]
+                            # arr[j+1] = temp
             print(f"After comparing index {j} and {j+1}:{arr}")
         print(f"End of Pass {i+1}: {arr}")
     return arr
