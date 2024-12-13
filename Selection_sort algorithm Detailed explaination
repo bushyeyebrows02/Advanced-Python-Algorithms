@@ -1,2 +1,5 @@
-Create selection_soort algorithm Detailed explaination.
+>>> Create selection_sort algorithm Detailed explaination.
 
+a) This algorithm is implemented by defiining a function with the name selection_sort for clarity.
+      def selection_sort(arr):
+  
