@@ -1,5 +1,68 @@
 >>> Create selection_sort algorithm Detailed explaination.
 
 a) This algorithm is implemented by defiining a function with the name selection_sort for clarity.
+
       def selection_sort(arr):
+
+b) after defining the function. we need to get the length of the array to be sorted by the algorithm.
+
+      def selection_sort(arr):
+            n = len(arr)
+
+   > This calculates the length of the array and stores it in a variable named n. This values will be used to determine how many
+      elements need to be sorted. 
+
+c) creating a loop that will go through the array and sort the values.
+
+      for i in range(n-1):
+      min_index = i
+            for j in range(i+1,n):
+                  if arr[j] < arr[min_index]:
+                        min_index = 
+      return arr
+
+    > The outter loop {for i in range(n-1)} iterates over the array.
+    > i representes the index of the current element being sorted, starting at 0
+    > We use range(n-1) because, after sorting n - 1 elements, the last element will automatically be in place
+    > the {min_index} initialises the min_index variable to the current index i.
+    > It assumes the element at index i is the smallest in the remaining unsorted portion of the array.
+    > The inner loop {for j in range(i+1, n):} this is the nested loop and goes to the ende of the array. j represents the index of
+      the elements being compared to the current "minumum element".
+    > {if arr[j] < arr{min_index} checkes if the current element at j is smaller than the element at the current min_index. 
+      if arr[j] is smaller, it means we`ve found a new minimum value in the unsorted portion.
+    > {min_index = j} If a smaller element is found, then min_index wil  be updated to min_index = j. which points to the index of 
+      the smallest element found so far. 
+    > arr[j], arr[min_index] = arr[min_index], arr[j]. Once the inner loop finishes, the smallest element in the unsorted portion 
+      has been identified (at min_index).
+    > This line swaps the element at index i (if the current position in the sorted portion) with the element at min_index.
+    > After the swapp, the smallest element is placed in its correct position in the sorted portion.
+    > {retunr arr} After all the iteration are complete, the array is sorted, and we return the sorted array. 
+
+d) EXAMPLE WALKTHROUGH
+let`s use the array: [64, 25, 12, 22, 11]
+> Initial array: [63, 25, 12, 22, 1]
+                  0,  1,  2,  3,  4 >>>>>> indexes of the array
+
+> Second iteration (i = 1)
+A) Outter loop (i = 0):
+.min_index = 0 (Assumes 64 is the smallest)
+.the inner loop finds 11 as the smallest (min_index = 4]
+.Swap arr[0] and arr[4]: [11, 25, 12, 22, 64]
+                           0,  1,  2,  3,  4 >>>>>> indexes of the array
+> Second iteration (i = 1)
+. min_index = 1 (Assumes 25 is the smallest)
+. Inner loop finds 12 as the smallest value (min_index =2)
+. Swap arr[1] and arr[2]: [11, 12, 25, 22, 64]
+
+> Third iteration (i = 2)
+. min_index = 2 (Assumes 25 is the smallest)
+. Inner loop finds 22 as the smallest (min_index = 3)
+. Swap arr[2] and arr[3]: [11, 12, 22, 25, 64]
+
+> Fourth iteration
+. min_index = 3 (25 is alreaddy smallest in the unsorted portion.
+. No Swap needed :[11, 12, 22, 25, 64]
+
+> Result
+
   
